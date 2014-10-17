@@ -1,0 +1,24 @@
+{
+    "name": "yousemble/laravel-opensrs",
+    "description": "",
+    "authors": [
+        {
+            "name": "Christiaan Lombard",
+            "email": "christiaan.lombard@yousemble.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*",
+        "curl/curl": "dev-master"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Yousemble\\LaravelOpensrs\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}

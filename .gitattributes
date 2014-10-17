@@ -1,0 +1,3 @@
+.gitignore text eol=lf
+composer.json text eol=lf
+* -crlf
