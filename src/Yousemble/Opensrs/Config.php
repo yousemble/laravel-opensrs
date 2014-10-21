@@ -1,6 +1,6 @@
-<?php namespace Yousemble\LaravelOpensrs\OpenSRS;
+<?php namespace Yousemble\Opensrs;
 
-class OpenSRSConfig{
+class Config{
 
   /**
   * OpenSRS reseller username

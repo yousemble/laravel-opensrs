@@ -1,6 +1,6 @@
-<?php namespace Yousemble\LaravelOpensrs\OpenSRS;
+<?php namespace Yousemble\Opensrs;
 
-class OpenSRSRequest{
+class Request{
 
   const PROTOCOL = 'XCP';
 

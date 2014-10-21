@@ -1,10 +1,10 @@
-<?php namespace Yousemble\LaravelOpensrs\OpenSRS;
+<?php namespace Yousemble\Opensrs;
 
-use Yousemble\LaravelOpensrs\Exceptions\OpenSRSConnectionException;
-use Yousemble\LaravelOpensrs\Exceptions\OpenSRSException;
+use Yousemble\Opensrs\Exceptions\OpenSRSConnectionException;
+use Yousemble\Opensrs\Exceptions\OpenSRSException;
 
 
-class OpenSRSComm{
+class Comm{
 
   private $_socket = false;
   private $_socketErrorNum = false;

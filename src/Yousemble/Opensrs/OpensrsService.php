@@ -1,19 +1,13 @@
-<?php namespace Yousemble\LaravelOpensrs;
+<?php namespace Yousemble\Opensrs;
 
-use Yousemble\LaravelOpensrs\OpenSRS\OpenSRSConfig;
-use Yousemble\LaravelOpensrs\OpenSRS\OpenSRSComm;
-use Yousemble\LaravelOpensrs\OpenSRS\OpenSRSOps;
-use Yousemble\LaravelOpensrs\OpenSRS\OpenSRSRequest;
-use Yousemble\LaravelOpensrs\OpenSRS\OpenSRSResponse;
-
-use Yousemble\LaravelOpensrs\Exceptions\OpenSRSConnectionException;
-use Yousemble\LaravelOpensrs\Exceptions\OpenSRSAuthenticationException;
-use Yousemble\LaravelOpensrs\Exceptions\OpenSRSException;
-use Yousemble\LaravelOpensrs\Exceptions\OpenSRSRequestException;
+use Yousemble\Opensrs\Exceptions\OpenSRSConnectionException;
+use Yousemble\Opensrs\Exceptions\OpenSRSAuthenticationException;
+use Yousemble\Opensrs\Exceptions\OpenSRSException;
+use Yousemble\Opensrs\Exceptions\OpenSRSRequestException;
 
 use Illuminate\Cache\CacheManager;
 
-class OpenSRS{
+class OpensrsService{
 
   protected $config;
   protected $ops;
@@ -21,9 +15,9 @@ class OpenSRS{
   protected $cookieStore;
 
   public function __construct(array $config, CacheManager $cookieStore = null){
-    $this->config = new OpenSRSConfig($config);
-    $this->ops = new OpenSRSOps($this->config);
-    $this->comm = new OpenSRSComm($this->config);
+    $this->config = new Config($config);
+    $this->ops = new Ops($this->config);
+    $this->comm = new Comm($this->config);
 
     $this->cookieStore = $cookieStore;
   }
@@ -35,7 +29,7 @@ class OpenSRS{
 
     }
 
-    $request = new OpenSRSRequest('set', 'cookie', [
+    $request = new Request('set', 'cookie', [
 
       ]);
 
@@ -49,7 +43,7 @@ class OpenSRS{
 
     }
 
-    $request = new OpenSRSRequest('delete', 'cookie', [
+    $request = new Request('delete', 'cookie', [
         'cookie' => $cookie
       ]);
 
@@ -57,10 +51,10 @@ class OpenSRS{
   }
 
   public function createSWRegisterDomainRequest(array $attributes){
-    return new OpenSRSRequest('SW_REGISTER', 'DOMAIN', $attributes);
+    return new Request('SW_REGISTER', 'DOMAIN', $attributes);
   }
 
-  public function processRequest(OpenSRSRequest $request){
+  public function processRequest(Request $request){
     $ops_request_str = $this->ops->encode($request->getData());
     $ops_response_str = $this->comm->processCommand($ops_request_str);
     $response_data = $this->ops->decode($ops_response_str);

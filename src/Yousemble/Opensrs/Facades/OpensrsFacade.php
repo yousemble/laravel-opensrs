@@ -1,8 +1,8 @@
-<?php namespace Yousemble\LaravelOpensrs;
+<?php namespace Yousemble\Opensrs\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class OpenSRSFacade extends Facade {
+class OpensrsFacade extends Facade {
 
     /**
      * Get the registered name of the component.

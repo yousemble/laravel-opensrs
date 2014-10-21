@@ -1,8 +1,8 @@
-<?php namespace Yousemble\LaravelOpensrs;
+<?php namespace Yousemble\Opensrs;
 
 use Illuminate\Support\ServiceProvider;
 
-class LaravelOpenSRSServiceProvider extends ServiceProvider {
+class OpensrsServiceProvider extends ServiceProvider {
 
 	/**
 	 * Indicates if loading of the provider is deferred.
@@ -18,7 +18,7 @@ class LaravelOpenSRSServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('yousemble/laravel-opensrs');
+		$this->package('yousemble/opensrs');
 	}
 
 	/**
@@ -34,9 +34,9 @@ class LaravelOpenSRSServiceProvider extends ServiceProvider {
       $config = $app['config']->get('services.opensrs', null);
 
       if($config === null){
-        $config = $app['config']->get('yousemble/laravel-opensrs::reseller', []);
+        $config = $app['config']->get('yousemble/opensrs::reseller', []);
       }
-      return new OpenSRS($config, $cache_provider);
+      return new OpensrsService($config, $cache_provider);
     });
 	}
 

@@ -1,5 +1,5 @@
 {
-    "name": "yousemble/laravel-opensrs",
+    "name": "yousemble/opensrs",
     "description": "",
     "authors": [
         {
@@ -9,7 +9,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "4.2.*",
+        "illuminate/support": "5.0.*",
         "curl/curl": "dev-master"
     },
     "autoload": {
@@ -20,5 +20,5 @@
             "Yousemble\\LaravelOpensrs\\": "src/"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev"
 }

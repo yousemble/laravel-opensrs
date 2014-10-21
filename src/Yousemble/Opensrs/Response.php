@@ -1,6 +1,6 @@
-<?php namespace Yousemble\LaravelOpensrs\OpenSRS;
+<?php namespace Yousemble\Opensrs;
 
-class OpenSRSResponse{
+class Response{
 
   protected $attributes = null;
   protected $code = null;

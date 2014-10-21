@@ -1,6 +1,6 @@
-<?php namespace Yousemble\LaravelOpensrs\OpenSRS;
+<?php namespace Yousemble\Opensrs;
 
-class OpenSRSOps {
+class Ops {
   protected $_OPS_VERSION = '0.9';
   protected $_OPT     = '';
   protected $_SPACER    = ' ';    /* indent character */
@@ -21,10 +21,10 @@ class OpenSRSOps {
    * @param array allows for setting various options (right now, just whether
    *          to use compression or not on the generated XML)
    */
-  public function __construct(OpenSRSConfig $config = null) {
+  public function __construct(Config $config = null) {
 
     if($config === null){
-      $this->config = new OpenSRSConfig();
+      $this->config = new Config();
     }else{
       $this->config = $config;
     }
