@@ -5,20 +5,13 @@ use Illuminate\Support\ServiceProvider;
 class OpensrsServiceProvider extends ServiceProvider {
 
 	/**
-	 * Indicates if loading of the provider is deferred.
-	 *
-	 * @var bool
-	 */
-	protected $defer = true;
-
-	/**
 	 * Bootstrap the application events.
 	 *
 	 * @return void
 	 */
 	public function boot()
 	{
-		$this->package('yousemble/opensrs');
+		//$this->package('yousemble/opensrs');
 	}
 
 	/**
@@ -40,14 +33,5 @@ class OpensrsServiceProvider extends ServiceProvider {
     });
 	}
 
-	/**
-	 * Get the services provided by the provider.
-	 *
-	 * @return array
-	 */
-	public function provides()
-	{
-		return array('ys-opensrs');
-	}
 
 }
